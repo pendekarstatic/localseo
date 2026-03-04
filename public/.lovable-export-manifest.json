@@ -1,6 +1,24 @@
 {
   "managedPaths": [
+    "public/services/plumber-in-new-york/index.html",
+    "public/services/plumber-in-los-angeles/index.html",
+    "public/services/plumber-in-chicago/index.html",
+    "public/services/plumber-in-houston/index.html",
+    "public/services/plumber-in-phoenix/index.html",
+    "public/services/electrician-in-new-york/index.html",
+    "public/services/electrician-in-los-angeles/index.html",
+    "public/services/electrician-in-chicago/index.html",
+    "public/services/electrician-in-houston/index.html",
+    "public/services/electrician-in-phoenix/index.html",
+    "public/services/handyman-in-new-york/index.html",
+    "public/services/handyman-in-los-angeles/index.html",
+    "public/services/handyman-in-chicago/index.html",
+    "public/services/handyman-in-houston/index.html",
+    "public/services/handyman-in-phoenix/index.html",
+    "public/index.html",
+    "public/sitemap.xml",
+    "public/robots.txt",
     "public/.lovable-export-manifest.json"
   ],
-  "exportedAt": "2026-03-04T23:53:41.557Z"
+  "exportedAt": "2026-03-04T23:53:59.594Z"
 }
