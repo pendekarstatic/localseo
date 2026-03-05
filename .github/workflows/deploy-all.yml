@@ -1,0 +1,36 @@
+name: Deploy to Cloudflare and Netlify
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy-cloudflare:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Cloudflare Pages Deploy Hook
+        env:
+          CLOUDFLARE_DEPLOY_HOOK: ${{ secrets.CLOUDFLARE_DEPLOY_HOOK }}
+        run: |
+          if [ -z "$CLOUDFLARE_DEPLOY_HOOK" ]; then
+            echo "Missing CLOUDFLARE_DEPLOY_HOOK secret"
+            exit 1
+          fi
+
+          curl --fail --show-error --silent -X POST "$CLOUDFLARE_DEPLOY_HOOK"
+
+  deploy-netlify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Netlify Deploy Hook
+        env:
+          NETLIFY_DEPLOY_HOOK: ${{ secrets.NETLIFY_DEPLOY_HOOK }}
+        run: |
+          if [ -z "$NETLIFY_DEPLOY_HOOK" ]; then
+            echo "Missing NETLIFY_DEPLOY_HOOK secret"
+            exit 1
+          fi
+
+          curl --fail --show-error --silent -X POST "$NETLIFY_DEPLOY_HOOK"
